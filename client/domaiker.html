@@ -8,14 +8,16 @@
 
 <template name="domain">
 	<div class="container">
-		<h1>Create your next domain name here!</h1>
+		<div id="header">
+			<h1>Create your next domain name here!</h1>
+		</div>
 
 		<input id="domain-name-input" name="name" type="text" placeholder="Some cool name" />
 
 		<div id="results">
 			<ul>
 			{{#each results}}
-			<li>{{this}}</li>
+			<li><a href=http://{{this}}>{{this}}</a></li>
 			{{/each}}
 			</ul>
 		</div>

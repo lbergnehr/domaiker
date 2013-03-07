@@ -4,11 +4,28 @@ debugBorder()
 
 *
 	font-family Helvetica
+	color #333
+
+linkColor = darkgreen
+a, a:visited
+	color linkColor
+	text-decoration none
+a:hover
+	border-bottom 2px dashed linkColor
+
+body
+	margin 0
+
+#header
+	margin-top 0
+	margin-bottom 30px
+	padding-top 10px
+	height 100px
+	width 100%
+	background-color lightgray
+	border-bottom 2px solid darkgray
 
 .container
-	margin-top 20%
-	margin-left 100px
-	margin-right 100px
 	text-align center
 
 #domain-name-input
@@ -17,3 +34,9 @@ debugBorder()
 	height 2em
 	font-size 2.7em
 	color orange
+
+#results
+	font-size 2em
+
+ul
+	list-style-type none
