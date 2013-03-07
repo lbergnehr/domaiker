@@ -4,22 +4,21 @@
 
 <body>
 	{{> domain}}
+	<footer>Created by <a href="https://twitter.com/lbergnehr">@lbergnehr</a></footer>
 </body>
 
 <template name="domain">
 	<div class="container">
-		<div id="header">
+		<header id="header">
 			<h1>Create your next domain name here!</h1>
-		</div>
+		</header>
 
 		<input id="domain-name-input" name="name" type="text" placeholder="Some cool name" />
 
 		<div id="results">
-			<ul>
 			{{#each results}}
-			<li><a href=http://{{this}}>{{this}}</a></li>
+			<div><a href=http://{{this}}>{{this}}</a></div>
 			{{/each}}
-			</ul>
 		</div>
 	</div>
 </template>
