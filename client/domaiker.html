@@ -4,7 +4,12 @@
 
 <body>
 	{{> domain}}
-	<footer>Created by <a href="https://twitter.com/lbergnehr">@lbergnehr</a></footer>
+	<footer>
+		<div>Created by <a href="https://twitter.com/lbergnehr">@lbergnehr</a></div>
+		<div>
+			with <a href="http://meteor.com">Meteor</a> using backgrounds from <a href="http://subtlepatterns.com">subtlepatterns.com</a>
+		</div>
+	</footer>
 </body>
 
 <template name="domain">
@@ -14,6 +19,13 @@
 		</header>
 
 		<input id="domain-name-input" name="name" type="text" placeholder="Some cool name" />
+
+		{{#if hasNoResults}}
+		<div id="no-matches">
+			<span>No matches</span>
+			<div>:(</div>
+		</div>
+		{{/if}}
 
 		<div id="results">
 			{{#each results}}

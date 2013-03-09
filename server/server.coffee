@@ -3,10 +3,12 @@ Meteor.startup ->
 
 	insertDefaultDomains() if Domains.find().count() == 0
 
+Meteor.publish "domains", ->
+	Domains.find()
+
 insertDefaultDomains = () ->
 	console.log "Inserting default domain names."
 
-	# http://data.iana.org/TLD/tlds-alpha-by-domain.txt
 	res = Meteor.http.get "http://data.iana.org/TLD/tlds-alpha-by-domain.txt"
 	return if !res?
 
@@ -16,3 +18,4 @@ insertDefaultDomains = () ->
 		if domain.indexOf("#") != 0 and domain != ""
 			console.log "Inserting '#{domain}'"
 			Domains.insert {name : domain}
+
