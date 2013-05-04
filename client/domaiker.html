@@ -31,6 +31,24 @@
 			{{#each results}}
 			<div><a href=http://{{this}}>{{this}}</a></div>
 			{{/each}}
+
+			{{> popularSearches}}
 		</div>
 	</div>
 </template>
+
+<template name="popularSearches">
+	<div id="popularSearchesList">
+		<h6>Popular searches</h6>
+			{{#each searches}}
+			<div>
+				<span>{{name}}: {{count}}</span>
+			</div>
+			{{/each}}
+	</div>
+</template>
+
+
+
+
+

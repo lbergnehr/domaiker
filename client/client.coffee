@@ -45,3 +45,6 @@ Template.domain.events
 		event.target.placeholder = ""
 	"blur #domain-name-input" : (event) ->
 		event.target.placeholder = @placeholder
+
+Template.popularSearches.searches = ->
+	SearchedDomains.find {count: {$gt: 0}}, {sort: {count: -1}, limit: 5}
