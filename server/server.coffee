@@ -5,6 +5,13 @@ Meteor.startup ->
 
 Meteor.publish "domains", ->
 	Domains.find()
+Meteor.publish "searchedDomains", ->
+	SearchedDomains.find()
+
+SearchedDomains.allow({
+	update: -> true
+	insert: -> true
+})
 
 insertDefaultDomains = () ->
 	console.log "Inserting default domain names."
